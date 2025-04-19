@@ -7,7 +7,7 @@ browser-compat: api.Element
 
 {{APIRef("DOM")}}
 
-**`Element`** is the most general base class from which all element objects (i.e. objects that represent elements) in a {{DOMxRef("Document")}} inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from `Element`.
+**`Element`** is the most general base class from which all element objects (i.e., objects that represent elements) in a {{DOMxRef("Document")}} inherit. It only has methods and properties common to all kinds of elements. More specific classes inherit from `Element`.
 
 For example, the {{DOMxRef("HTMLElement")}} interface is the base interface for HTML elements. Similarly, the {{DOMxRef("SVGElement")}} interface is the basis for all SVG elements, and the {{DOMxRef("MathMLElement")}} interface is the base interface for MathML elements. Most functionality is specified further down the class hierarchy.
 
@@ -42,7 +42,7 @@ _`Element` inherits properties from its parent interface, {{DOMxRef("Node")}}, a
 - {{DOMxRef("Element.currentCSSZoom")}} {{ReadOnlyInline}}
   - : A number indicating the effective zoom size of the element, or 1.0 if the element is not rendered.
 - {{DOMxRef("Element.elementTiming")}} {{Experimental_Inline}}
-  - : A string reflecting the [`elementtiming`](/en-US/docs/Web/HTML/Attributes/elementtiming) attribute which marks an element for observation in the {{domxref("PerformanceElementTiming")}} API.
+  - : A string reflecting the [`elementtiming`](/en-US/docs/Web/HTML/Reference/Attributes/elementtiming) attribute which marks an element for observation in the {{domxref("PerformanceElementTiming")}} API.
 - {{domxref("Element.firstElementChild")}} {{ReadOnlyInline}}
   - : Returns the first child element of this element.
 - {{DOMxRef("Element.id")}}
@@ -60,7 +60,7 @@ _`Element` inherits properties from its parent interface, {{DOMxRef("Node")}}, a
 - {{DOMxRef("Element.outerHTML")}}
   - : A string representing the markup of the element including its content. When used as a setter, replaces the element with nodes parsed from the given string.
 - {{DOMxRef("Element.part")}}
-  - : Represents the part identifier(s) of the element (i.e. set using the `part` attribute), returned as a {{domxref("DOMTokenList")}}.
+  - : Represents the part identifier(s) of the element (i.e., set using the `part` attribute), returned as a {{domxref("DOMTokenList")}}.
 - {{DOMxRef("Element.prefix")}} {{ReadOnlyInline}}
   - : A string representing the namespace prefix of the element, or `null` if no prefix is specified.
 - {{DOMxRef("Element.previousElementSibling")}} {{ReadOnlyInline}}
@@ -239,6 +239,8 @@ _`Element` inherits methods from its parents {{DOMxRef("Node")}}, and its own pa
   - : Inserts a given text node at a given position relative to the element it is invoked upon.
 - {{DOMxRef("Element.matches()")}}
   - : Returns a boolean value indicating whether or not the element would be selected by the specified selector string.
+- {{DOMxRef("Element.moveBefore()")}} {{Experimental_Inline}}
+  - : Moves a given {{domxref("Node")}} inside the invoking node as a direct child, before a given reference node, without removing and then inserting the node.
 - {{DOMxRef("Element.prepend()")}}
   - : Inserts a set of {{domxref("Node")}} objects or strings before the first child of the element.
 - {{DOMxRef("Element.querySelector()")}}
@@ -299,7 +301,7 @@ Listen to these events using `addEventListener()` or by assigning an event liste
 - {{domxref("Element/beforeinput_event", "beforeinput")}}
   - : Fired when the value of an input element is about to be modified.
 - {{domxref("Element/beforematch_event", "beforematch")}} {{Experimental_Inline}}
-  - : Fires on an element that is in the [_hidden until found_](/en-US/docs/Web/HTML/Global_attributes/hidden) state, when the browser is about to reveal its content because the user has found the content through the "find in page" feature or through fragment navigation.
+  - : Fires on an element that is in the [_hidden until found_](/en-US/docs/Web/HTML/Reference/Global_attributes/hidden) state, when the browser is about to reveal its content because the user has found the content through the "find in page" feature or through fragment navigation.
 - {{domxref("Element/beforescriptexecute_event","beforescriptexecute")}} {{Non-standard_Inline}} {{deprecated_inline}}
   - : Fired when a script is about to be executed.
 - {{domxref("Element/beforexrselect_event", "beforexrselect")}} {{Experimental_Inline}}
@@ -444,7 +446,7 @@ Listen to these events using `addEventListener()` or by assigning an event liste
 - {{domxref("Element/scrollsnapchange_event", "scrollsnapchange")}} {{experimental_inline}}
   - : Fired on the scroll container at the end of a scrolling operation when a new scroll snap target has been selected.
 - {{domxref("Element/scrollsnapchanging_event", "scrollsnapchanging")}} {{experimental_inline}}
-  - : Fired on the scroll container when the browser determines a new scroll snap target is pending, i.e. it will be selected when the current scroll gesture ends.
+  - : Fired on the scroll container when the browser determines a new scroll snap target is pending, i.e., it will be selected when the current scroll gesture ends.
 
 ### Touch events
 
