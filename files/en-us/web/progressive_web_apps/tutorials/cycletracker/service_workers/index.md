@@ -1,11 +1,10 @@
 ---
 title: "CycleTracker: Service workers"
-short-title: Service workers
+short-title: Offline support using service workers
 slug: Web/Progressive_web_apps/Tutorials/CycleTracker/Service_workers
 page-type: tutorial-chapter
+sidebar: pwasidebar
 ---
-
-{{PWASidebar}}
 
 {{PreviousMenu("Web/Progressive_web_apps/Tutorials/CycleTracker/Manifest_file", "Web/Progressive_web_apps/Tutorials/CycleTracker")}}
 
@@ -110,7 +109,9 @@ We name our cache `period-tracker-` with the current `VERSION` appended. As the 
 const VERSION = "v1";
 const CACHE_NAME = `period-tracker-${VERSION}`;
 
-const APP_STATIC_RESOURCES = [ ... ];
+const APP_STATIC_RESOURCES = [
+  // …
+];
 ```
 
 We have successfully declared our constants; a unique identifier, the list of offline resources as an array, and the application's cache name that changes every time the identifier is updated. Now let's focus on installing, updating, and deleting unused cached resources.
@@ -127,15 +128,11 @@ The {{domxref("Cache.addAll()")}} method takes an array of URLs as a parameter, 
 
 ```js
 self.addEventListener("install", (e) => {
-  e.waitUntil((async () => {
+  e.waitUntil(
+    (async () => {
       const cache = await caches.open("cacheName_identifier");
-      cache.addAll([
-        "/",
-        "/index.html"
-        "/style.css"
-        "/app.js"
-      ]);
-    })()
+      cache.addAll(["/", "/index.html", "/style.css", "/app.js"]);
+    })(),
   );
 });
 ```
